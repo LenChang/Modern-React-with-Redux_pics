@@ -1,6 +1,8 @@
 import React from "react";
 
 class SearchBar extends React.Component {
+  state = { term: "Hi there" };
+
   // onInputChange(event) {
   //   console.log(event.target.value);
   // }
@@ -18,7 +20,11 @@ class SearchBar extends React.Component {
             <input
               type="text"
               // onClick={this.onInputClick}
-              onChange={(e) => console.log(e.target.value)}
+              value={this.state.term}
+              onChange={
+                (e) => this.setState({ term: e.target.value })
+                // this.setState({ term: e.target.value.toUpperCase() }) // It's a example for controlled comp. which you can do
+              }
             ></input>
           </div>
         </form>
